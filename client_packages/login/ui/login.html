@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 50;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+
+
+</head>
+
+<body style="height: 50;">
+
+
+    <div style="margin:auto; background-color: gray; width: 50%;">
+        <center>
+            <p style="color:transparent"></p>
+            <p style="margin-left: auto; margin-right: auto; font-size: 2em;">ACCOUNT LOGIN SYSTEM</p>
+
+
+
+            <div class=" input-group mb-3" style="width: 50%;">
+                <div class="input-group-prepend">
+
+                </div>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                    aria-describedby="basic-addon1" id="usernameValue">
+            </div>
+
+            <div class="input-group mb-3" style="width: 50%;">
+                <div class="input-group-prepend">
+
+                </div>
+                <input type="password" class="form-control" placeholder="Password" aria-label="Password"
+                    aria-describedby="basic-addon1" id="passwordValue">
+            </div>
+
+            <button onclick="test()" type="button" class="btn btn-primary btn-lg"
+                style="margin-left: 200;">LOGIN</button>
+
+            <p style="color:transparent"></p>
+
+    </div>
+
+    </center>
+
+
+
+
+
+</body>
+
+<script>
+
+    function test() {
+
+        var passwordValue = document.getElementById("passwordValue");
+
+        var usernameValue = document.getElementById("usernameValue");
+
+
+        var error = false;
+
+        if (passwordValue.value.length == 0 || usernameValue.value.length == 0) {
+            error = true;
+
+        }
+
+
+        mp.trigger('loginToServer', usernameValue.value, passwordValue.value, error);
+
+
+    }
+
+
+    function init() {
+
+
+        mp.console.logInfo("yo", true, true); // When pressing F11, you should now see a message saying "example"
+        mp.events.add('updateBrowser', (value) => {
+
+            var errorText = document.getElementById("errorText");
+            mp.console.logInfo("hi", true, true); // When pressing F11, you should now see a message saying "example"
+
+            errorText.value = "test";
+        });
+    }
+
+
+
+
+</script>
+
+</html>
